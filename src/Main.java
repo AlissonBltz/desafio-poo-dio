@@ -2,30 +2,26 @@ import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
-import java.util.Scanner;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         Curso curso1 = new Curso();
-        curso1.setTitulo("curso java");
-        curso1.setDescricao("descrição curso java");
+        curso1.setTitulo("Java");
+        curso1.setDescricao("Linguagem de programação orientada a objetos");
         curso1.setCargaHoraria(8);
 
         Curso curso2 = new Curso();
-        curso2.setTitulo("curso js");
-        curso2.setDescricao("descrição curso js");
+        curso2.setTitulo("JS");
+        curso2.setDescricao("Curso de Javascript para web");
         curso2.setCargaHoraria(4);
 
         Mentoria mentoria = new Mentoria();
-        mentoria.setTitulo("mentoria de java");
-        mentoria.setDescricao("descrição mentoria java");
+        mentoria.setTitulo("Java");
+        mentoria.setDescricao("Mentoria para a linguagem Java");
         mentoria.setData(LocalDate.now());
-
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
@@ -35,18 +31,16 @@ public class Main {
         bootcamp.getConteudos().add(mentoria);
 
         
-        String nome = ;
-        
         Dev dev1 = new Dev();
         System.out.println("Digite o nome do desenvolvedor: ");
         dev1.setNome(entrada.nextLine());
         dev1.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos "+ dev1.getNome + ": " + dev1.getConteudosInscritos());
+        System.out.println("Conteúdos Inscritos "+ dev1.getNome() + ":\n" + dev1.getConteudosInscritos());
         dev1.progredir();
         dev1.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos " + dev1.getNome + ": " + dev1.getConteudosInscritos());
-        System.out.println("Conteúdos Concluídos " + dev1.getNome + ": " + dev1.getConteudosConcluidos());
+        System.out.println("Conteúdos Inscritos " + dev1.getNome() + ":\n " + dev1.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos " + dev1.getNome() + ":\n " + dev1.getConteudosConcluidos());
         System.out.println("XP:" + dev1.calcularTotalXp());
 
         System.out.println("-------");
@@ -55,14 +49,15 @@ public class Main {
         System.out.println("Digite o nome do desenvolvedor: ");
         dev2.setNome(entrada.nextLine());
         dev2.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos " + dev2.getNome + ": " + dev2.getConteudosInscritos());
+        System.out.println("Conteúdos Inscritos " + dev2.getNome() + ": " + dev2.getConteudosInscritos());
         dev2.progredir();
         dev2.progredir();
         dev2.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos " + dev2.getNome + ": " + dev2.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos " + dev2.getNome + ": " + dev2.getConteudosConcluidos());
+        System.out.println("Conteúdos Inscritos " + dev2.getNome() + ": " + dev2.getConteudosInscritos());
+        System.out.println("Conteúdos Concluidos " + dev2.getNome() + ": " + dev2.getConteudosConcluidos());
         System.out.println("XP:" + dev2.calcularTotalXp());
+        entrada.close();
 
     }
 
